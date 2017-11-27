@@ -1,0 +1,67 @@
+--To setup and run your web scraper, follow these steps:
+
+  1)Create a new text file in your virtual envirenment folder, inside of the subfolder ".lpvenv".
+  2)Rename the file to "web".
+  3)Right click on the file and click edit with notepad++.
+  4)Near the top left of the program notepad++ click "Language", click "P" and click "Python".
+  5)Copy and paste the code below into your file, opened in notepad++:
+    --MAKE SURE IT IS INDENTED EXACTLY AS IT IS HERE OR IT WILL NOT WORK--
+    
+    
+    import time
+    import urllib
+    import re
+
+
+
+    def main ():
+	
+	      sec = 20
+	      timeT = 0
+
+	      while timeT < sec:
+
+		        oldPrice = '<div id="qwidget_lastsale" class="qwidget-dollar">(.+?)</div>'	
+            print "Checking the current price of apple stock. This may take a few a few seconds..."
+            time.sleep(5)
+            htmlfile = urllib.urlopen("http://www.nasdaq.com/symbol/aapl/real-time")
+            htmltext = htmlfile.read()
+            regex = '<div id="qwidget_lastsale" class="qwidget-dollar">(.+?)</div>'	
+            pattern = re.compile(regex)
+            newPrice = re.findall(pattern,htmltext)
+            oldPrice = newPrice
+            print " The current price of apple stock is: "
+            print newPrice
+
+            if newPrice != oldPrice:
+              print "Price changed!"
+              oldPrice = newPrice
+
+            else:
+              print "The new Apple stock price is:"
+              timeT +=1
+
+            print newPrice
+
+            if timeT < sec:
+              print "Restarting...This may take a few seconds..."
+
+            if timeT == sec:
+              print "Ending process..."
+		
+		
+	
+
+main()
+
+6) Exit and save the file, then rename the last bit called ".txt" to ".py" to convert the file type to python.
+
+7)Open up cmd by pressing the "windows button" and "r" together. a pop up will appear near the bottom left corner of your screen. 
+Type in cmd into the "open" tab. Press enter. Cmd should pop up on your screen.
+
+8)In cmd, type "cd desktop/pytoexe/.lpvenv/scripts" and press enter. Then type in "activate" and press enter. There should now be 
+a "(.lpvenv)" before the text cmd now shows you. This means that cmd is running your virtual envirenment succesfully.
+
+9) Type in "python web" and press enter. Cmd should start running your web scraper program. To end the process, press "ctrl" and "c".
+
+
