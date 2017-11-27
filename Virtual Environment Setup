@@ -33,11 +33,11 @@
   notice that the icon of the file has changed to an icon with gears on it. This is what you want, this is what a ".bat" file looks like.
   
   4) Double click the batch file you had just renamed. A windows cmd tab should pop up asking " Do you want to make the folder in the 
-  current directory?". Type in "y" and press enter. Now the cmd should display "Folder name (no spaces):". Enter the name you want to call
-  the virtual envirenment folder, without any spaces. Now the cmd will start the process of creating your folder. It should only take a few
+  current directory?". Type in "y" and press enter. Now the cmd should display "Folder name (no spaces):".Type in "pytoexe", without any spaces.
+  Now the cmd will start the process of creating your folder. It should only take a few
   seconds, depending on your machine. after the process is done, cmd should automatically exit itself. If not, exit the cmd manually.
   
-  5) You should be able to see your folder on the dektop. Double click it, and you will find another folder inside calle ".lpvenv". 
+  5) You should be able to see your folder called "pytoexe" on your dektop. Double click it, and you will find another folder inside calle ".lpvenv". 
   Double click the ".lpvenv" folder and you should find four more folders "Include, Lib, Scripts, tcl" and a "pip-selfcheck.json" file.
   
   Your Virtual environment is now set up in a folder on your desktop.
