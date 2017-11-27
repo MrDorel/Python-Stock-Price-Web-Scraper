@@ -1,2 +1,6 @@
 This web scraper monitors the price of apple stock through python and the nasdaq website. 
 It notifies the user if there is a change in price, and displays the original and new price of apple stock.
+
+Work derived from the help of Ben and Seth (my classmates)
+Work derived from youtube video tutorial by chris reeves - https://www.youtube.com/watch?v=f2h41uEi0xU
+
