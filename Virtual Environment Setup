@@ -1,0 +1,44 @@
+--To set up your virtual environment, follow these steps:
+  1) Create a new text file on your desktop.
+  
+  2) Inside of that text file, copy and past the text below:
+     --MAKE SURE IT IS INDENTED AS PRESENTED BELOW
+ 
+      @echo off
+      set myvar=%cd%
+      :choice
+      set /P  input=Do you want to make the folder in the current directory? "%myvar%" (Y/N)
+      If /I "%input%"=="y" goto yes 
+      If /I "%input%"=="n" goto no
+      goto :choice
+
+      :yes
+      set myvar=%cd%
+      set /p FolderName=Folder name (no spaces):
+      mkdir %FolderName%
+      cd %myvar%\%FolderName%
+      c:\Python27\Scripts\virtualenv -p c:\Python27\python.exe .lpvenv
+      .lpvenv\Scripts\activate
+      @echo on
+
+      :no
+      set /p dirname=%cd%\
+      cd %cd%\%dirname%
+      goto :yes
+
+  3) Exit and save the text file, then right click on it and click rename to rename it. The specific thing you will be renaming is the file 
+  type. Right now it has a ".txt" at the end of the file name. Rename the ".txt" to ".bat". Exclude the quotation marks. Now press enter and
+  a pop-up should appear on your desktop. It will say "If you change the file name extension, the file might become unusable. Are you sure 
+  you want to change it?". Click yes. Now check the end of the file name and make sure it has a ".bat" at the end of it. You should also 
+  notice that the icon of the file has changed to an icon with gears on it. This is what you want, this is what a ".bat" file looks like.
+  
+  4) Double click the batch file you had just renamed. A windows cmd tab should pop up asking " Do you want to make the folder in the 
+  current directory?". Type in "y" and press enter. Now the cmd should display "Folder name (no spaces):". Enter the name you want to call
+  the virtual envirenment folder, without any spaces. Now the cmd will start the process of creating your folder. It should only take a few
+  seconds, depending on your machine. after the process is done, cmd should automatically exit itself. If not, exit the cmd manually.
+  
+  5) You should be able to see your folder on the dektop. Double click it, and you will find another folder inside calle ".lpvenv". 
+  Double click the ".lpvenv" folder and you should find four more folders "Include, Lib, Scripts, tcl" and a "pip-selfcheck.json" file.
+  
+  Your Virtual environment is now set up in a folder on your desktop.
+  
